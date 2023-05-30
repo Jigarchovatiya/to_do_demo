@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        fontFamily: "Shrikhand",
+        primarySwatch: Colors.yellow,
+        fontFamily: "inter",
       ),
       home: const SplashScreen(),
     );

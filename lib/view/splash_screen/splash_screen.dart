@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:to_do_demo/view/home_screen/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -9,10 +12,23 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    Timer(
+      const Duration(seconds: 5),
+      () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    // double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFfdc8da),
       body: SafeArea(
@@ -24,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: height / 4,
                 ),
                 const Text(
-                  "📝Track Your Tasks 📒",
+                  "📝 Track Your Tasks 📒",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 20,
